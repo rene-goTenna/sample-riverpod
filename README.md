@@ -1,2 +1,2 @@
-# easy-riverpods
-Sample project for the riverpods architecture
+# sample-riverpod
+Sample project for the riverpod architecture
