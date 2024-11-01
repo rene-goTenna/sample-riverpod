@@ -43,7 +43,7 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final radioModel = ref.watch(userProvider);
-    final radioService = ref.read(userProvider.notifier);
+    final radioNotifier = ref.read(userProvider.notifier);
 
     return MaterialApp(
       home: Scaffold(
@@ -55,9 +55,9 @@ class MyApp extends ConsumerWidget {
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             if(radioModel.radioState == RadioState.connected) {
-              radioService.disconnect();
+              radioNotifier.disconnect();
             } else {
-              radioService.connect();
+              radioNotifier.connect();
             }
           },
           child: const Icon(Icons.add),
